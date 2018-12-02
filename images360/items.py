@@ -5,14 +5,14 @@
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/items.html
 
-import scrapy
 from scrapy import Item,Field
 
-class Images360Item(scrapy.Item):
+class Images360Item(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     collection = table = 'images'
+
     id = Field()
-    imgurl = Field()
+    url = Field()
     title = Field()
     thumb = Field()

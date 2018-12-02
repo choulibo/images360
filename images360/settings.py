@@ -14,7 +14,7 @@ BOT_NAME = 'images360'
 SPIDER_MODULES = ['images360.spiders']
 NEWSPIDER_MODULE = 'images360.spiders'
 
-LOG_LEVEL  = "WARNING"
+# LOG_LEVEL  = "WARNING"
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'images360 (+http://www.yourdomain.com)'
 
@@ -71,6 +71,8 @@ ITEM_PIPELINES = {
    'images360.pipelines.MysqlPipeline': 302,
 }
 
+IMAGES_STORE = './images'
+
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
@@ -92,9 +94,21 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
+# MAX_PAGES = 1
+# MONGO_URI = 'localhost'
+# MONGO_DB = 'images360'
+#
+# MYSQL_HOST = 'localhost'
+# MYSQL_DATABASE = 'images360'
+# MYSQL_USER = 'root'
+# MYSQL_PASSWORD = 'root'
+# MYSQL_PORT = 3306
+
 MAX_PAGES = 1
+
 MONGO_URI = 'localhost'
 MONGO_DB = 'images360'
+
 MYSQL_HOST = 'localhost'
 MYSQL_DATABASE = 'images360'
 MYSQL_USER = 'root'

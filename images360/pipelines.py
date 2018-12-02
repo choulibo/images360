@@ -40,9 +40,7 @@ class MongoPipeline(object):
         self.client.close()
 
 
-class MysqlPipeline(object):
-    """保存到Mysql中"""
-
+class MysqlPipeline():
     def __init__(self, host, database, user, password, port):
         self.host = host
         self.database = database
@@ -60,10 +58,13 @@ class MysqlPipeline(object):
             port=crawler.settings.get('MYSQL_PORT'),
         )
 
-    def open_spider(self,spider):
-        self.db = pymysql.connect(self.host, self.password, self.database, charset='utf8',
+    def open_spider(self, spider):
+        self.db = pymysql.connect(self.host, self.user, self.password, self.database, charset='utf8',
                                   port=self.port)
         self.cursor = self.db.cursor()
+
+    def close_spider(self, spider):
+        self.db.close()
 
     def process_item(self, item, spider):
         print(item['title'])

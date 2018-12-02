@@ -20,7 +20,7 @@ class ImagesSpider(scrapy.Spider):
         for image in result.get('list'):
             item = Images360Item()
             item['id'] = image.get('imageid')
-            item['imgurl'] = image.get('qhimg_url')
+            item['url'] = image.get('qhimg_url')
             item['title'] = image.get('group_title')
             item['thumb'] = image.get('qhimg_thumb_url')
             yield item
