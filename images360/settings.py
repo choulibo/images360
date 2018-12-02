@@ -65,9 +65,11 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'images360.pipelines.Images360Pipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'images360.pipelines.ImagePipeline': 300,
+   'images360.pipelines.MongoPipeline': 301,
+   'images360.pipelines.MysqlPipeline': 302,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -91,3 +93,10 @@ ROBOTSTXT_OBEY = False
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 MAX_PAGES = 1
+MONGO_URI = 'localhost'
+MONGO_DB = 'images360'
+MYSQL_HOST = 'localhost'
+MYSQL_DATABASE = 'images360'
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = 'root'
+MYSQL_PORT = 3306
